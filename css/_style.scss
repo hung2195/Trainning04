@@ -2,7 +2,7 @@ body{
 	background-color: #ffffff;
 }
 .container{
-	max-width: 640px;
+	max-width: 320px;
 	margin: 0 auto;
 }
 .title_header{
@@ -15,22 +15,30 @@ body{
 	}
 }
 .section01{
-	padding: 0 10px;
 }
 .title_h1{
 	font-weight: bold;
 	font-size: 17px;
-	padding: 10px 0;
+	margin: 0px 10px;
 	border-top: 1px solid #000000;
 	border-bottom: 1px solid #000000;
+	padding: 10px 0;
+
 }
 .chat_contain{
-	padding-top: 10px;
 	.chat_items{
 	display: flex;
 	justify-content: center;
 	align-items:center;
 	padding-top: 10px;
+		ul{
+			li{
+			   	font-size: 12px;
+				&:before{
+					content: "※";
+				}
+			}
+		}
 	}
 	// img{
 	// 	width: 46px;
@@ -38,40 +46,115 @@ body{
 	// }
 	
 	.textbox{
-	   background: url("../img/textbox.png") no-repeat center;
+		position: relative;
+	   // background: url("../img/textbox02.png") no-repeat center;
 	   background-size: 100% 100%;
-	   padding: 10px 10px 10px 20px;
-	   p {
+	   border: 1px solid $primary_color; 
+	   padding: 15px 10px;
+	   border-radius: 10px;
+		margin:0 10px 0 5px;	
+	   &:before {
+	   content:"";
+	   position: absolute;
+	   width: 0;
+	   height: 0;
+	   transform: translate(-50%,-50%);
+		top: 50%;
+	   border-top: 10px solid transparent;
+		border-right: 10px solid $primary_color;
+		border-bottom: 10px solid transparent;
+		margin: 0px 0 0 -15px;
+	}
+	   .conner{
+	   	content: "";
+		   position: absolute;
+		   width: 0px	;
+		   height: 0px;
+		   position: absolute;
+			transform: translate(-50%,-50%);
+			top: 50%;
+		   border-top: 10px solid transparent;
+		   border-right: 10px solid #ffffff;
+		   border-bottom: 10px solid transparent;
+		   margin: 0px 0 0 -13px;
+		}
+	 p {
 	   	font-size: 12px;
 	   }
 	}
 	.textbox02{
-	   background: url("../img/textbox02.png") no-repeat center;
+		position: relative;
+	   // background: url("../img/textbox02.png") no-repeat center;
 	   background-size: 100% 100%;
-	   padding: 10px 20px 10px 10px;
+	   border: 1px solid $primary_color; 
+	   padding: 15px 10px;
+	   border-radius: 10px;
+	   margin-left: 10px;
+	   &:before {
+	   	content:"";
+	   	position: absolute;
+	   	width: 0;
+	   	height: 0;
+	   	transform: translate(-50%,-50%);
+		top: 50%;
+		right: 0;
+	   	border-top: 10px solid transparent;
+		border-left: 10px solid $primary_color;
+		border-bottom: 10px solid transparent;
+		margin: 0px -16px 0 0;
+	}
+	   .conner{
+	   	content: "";
+	   	position: absolute;
+	   	width: 0px	;
+	   	height: 0px;
+	   	position: absolute;
+		transform: translate(-50%,-50%);
+		top: 50%;
+	   	right: 0;
+	   	border-top: 10px solid transparent;
+	   	border-left: 10px solid #ffffff;
+	   	border-bottom: 10px solid transparent;
+		margin: 0px -14px 0 0;
+		  
+		}
 	 p {
 	   	font-size: 12px;
 	   }
 	}
 	.bot_chat{
+		padding: 0 10px;
 		margin:70px 0 30px 50px;
-		font-size: 14px;
+		font-size: 12px;
+		letter-spacing: -0.5px;
 		ul {
 			li{
 				&:first-child{
 					padding-bottom: 20px;
+					font-size: 14px;
 				}
 				&:before{
-					content: "※"
+					content: "※";
 				}
 			}
 		}
 	}
 }
+/*-------------------chat contain-------------------*/
 .check_point{
-	background: url("../img/checkpoint.png");
-	padding: 60px 10px 10px 20px;
+	// background: url("../img/checkpoint.png");
+	padding: 0px 10px 10px 20px;
+	margin: 60px 10px 0 10px;
 	background-size: 100% 100%;
+	border: 3px solid $primary_color;
+	border-radius: 10px;
+	position: relative;
+	background: #EBF8FF;
+	.girl_cp{
+		position: absolute;
+		top: -60px;
+		right: 0;
+	}
 	.title_h2{
 		font-size: 20px;
 		margin: 10px 0 15px 0;
@@ -82,16 +165,25 @@ body{
 		text-decoration: underline dotted $border_color;
 		// border-bottom: 1px solid #000000;
 		// padding-top: 10px;
+
+	}
+	span {
+
+		padding-bottom: 5px;
+		border-bottom: 2px dotted $border_color;
 		letter-spacing: 0;
-		line-height: 2.5;
+		line-height: 28px;
 		font-size: 12px
 	}
 }
+/*-------------------check point-------------------*/
+
 .section02{
 	background: $brown_color;
-	padding:0 10px 0 20px;
-	color: #ffffff;
+	padding:0 10px 0 15px;
+	color: #FFF9F0;
 	margin-top: 20px;
+	letter-spacing: 0px;
 	.title_h2{
 		font-size: 22px;
 		font-weight: bold;
@@ -108,47 +200,53 @@ body{
 	}
 	.input{
 		height: 30px;
-		font-size: 15px;
+		font-size: 17px;
 		display: block;
 		width: 100%;
 		text-align: center;
 		font-weight: bold;
-		// padding: 10px 0;
+		background: #FFF9F0;
 		border: none;
 
 	}
 	.btn{
+		font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+		font-weight: bold;
 		padding: 5px 0;
 		width: 100%;
-		margin: 10px 0;
+		margin: 20px 0 30px 0;
 		text-align: center;
 		font-size: 19px;
 		color: #ffffff;
+		border:3px solid #C1272D;
 		background-color: #ED1C24;
-		border-color:#C1272D;
+		// border-color:#C1272D;
 	}
 }
+/*-------------------/section02-------------------*/
+
 .section03{
-	padding: 0 10px;
+	padding: 0 14px 0 14px;
 	position: relative;
 	.title_sec03{
 		top: -85px;
-		left: 0;
+		left: -3px;
 		position: absolute;
 	}
 	.description_sec03{
 		border: 1px solid $brown_color;
-		margin-top: 65px;
+		margin-top: 68px;
 		padding: 30px 10px;
 		li{
 			display: flex;
 			color: $primary_color;
 			text-decoration: underline;
 			font-size: 12px;
+			// font-weight: bold;
 			line-height: 2;	
 			&:before{
 				content: url("..//img/ico_text.png");
-				margin-right: 5px;
+				margin: 5px 5px 0 0;
 			}
 		}
 		a{
@@ -156,14 +254,18 @@ body{
 		}
 	}
 }
+/*-------------------/section03-------------------*/
+
 .footer{
 	position: relative;
 	// bottom: 30px;
 	.img_footer {
 		position: absolute;
-		top: -20px;
+		width: 100%;
+		top: -25px;
 		img{
 			width: 100%;
 		}
 	}
 }
+/*-------------------/footer-------------------*/
